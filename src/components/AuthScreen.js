@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image} from 'react-native';
 
 const AuthScreen = ({
   email,
@@ -13,7 +13,7 @@ const AuthScreen = ({
 }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
+       <View style={styles.imageContainer}>
         <Image source={{ url: 'https://example.com/banner.jpg' }} style={styles.bannerImage} />
       </View>
       <View style={styles.authContainer}>
@@ -40,10 +40,10 @@ const AuthScreen = ({
           </Text>
         </TouchableOpacity>
         <Text style={styles.orText}>OR</Text>
-      </View>
-      <TouchableOpacity style={[styles.button, styles.guestButton]} onPress={handleGuestLogin}>
+        <TouchableOpacity style={[styles.button, styles.guestButton]} onPress={handleGuestLogin}>
         <Text style={styles.buttonText}>Play as Guest</Text>
       </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -72,36 +72,32 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   title: {
-    fontStyle: 'Nunito_700Bold',
+    fontStyle: 'Nunito',
     fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 1,
     textAlign: 'left',
-    marginLeft: 20
   },
   input: {
-    width: '90%',
+    width: '100%',
     padding: 10,
     marginBottom: 10,
-    marginLeft: 20,
     borderWidth: 1,
     marginVertical: 20,
     borderColor: '#ccc',
     borderRadius: 5,
   },
   button: {
-    width: '90%',
+    width: '100%',
     padding: 15,
     marginVertical: 10,
     backgroundColor: '#007BFF',
     borderRadius: 25,
     alignItems: 'center',
-    marginLeft: 20,
   },
   guestButton: {
     backgroundColor: '#F7C105',
-    width: '82%',
-    marginLeft: 5,
+    width: '100%',
   },
   buttonText: {
     color: 'white',

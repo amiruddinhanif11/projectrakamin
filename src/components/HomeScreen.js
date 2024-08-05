@@ -1,15 +1,24 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { StyleSheet, View, Image, Text } from 'react-native';
+import { Button } from '@ant-design/react-native';
 
-const HomeScreen = ({ navigation, user, handleAuthentication, isGuest, handleGuestLogout }) => {
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome</Text>
-      <Text style={styles.emailText}>{isGuest ? 'Guest' : user.email}</Text>
-      <Button title="Play" onPress={() => navigation.navigate('Play')} />
-      <Button title="Profile" onPress={() => navigation.navigate('Profile')} />
-      <Button title="Settings" onPress={() => navigation.navigate('Settings')} />
-      <Button title={isGuest ? 'Login' : 'Logout'} onPress={isGuest ? handleGuestLogout : handleAuthentication} color="#e74c3c" />
+      <Text style={styles.greeting}>Hello, Haya!</Text>
+      <Text style={styles.pickround}>Pick Your Round!</Text>
+      <View style={styles.buttonContainer}>
+        {[3, 5, 7, 9].map((round) => (
+          <Button key={round} style={styles.button}>
+            {round}
+          </Button>
+          
+        ))}
+      </View>
+      
+      <button type='primary'> 
+          <Text style={styles.buttonText}>start</Text>
+        </button>
     </View>
   );
 };
@@ -19,18 +28,29 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 16,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#f3e8ff',
   },
-  title: {
+  greeting: {
     fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: 20,
   },
-  emailText: {
-    fontSize: 18,
-    marginBottom: 16,
+  image: {
+    width: 200,
+    height: 400, // adjust these values based on your image size
+    resizeMode: 'contain',
+    marginBottom: 20,
+  },
+  pickround:{ 
+    justifyContent: 'center',
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    width: '80%',
+  },
+  button: {
+    marginHorizontal: 10,
   },
 });
 
-export default HomeScreen;
+export default App;

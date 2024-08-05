@@ -5,7 +5,6 @@ import { ScrollView, StyleSheet, Alert } from 'react-native';
 import { auth } from './src/services/firebase';
 import { onAuthStateChanged, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword } from '@firebase/auth';
 import AuthScreen from './src/components/AuthScreen';
-import AuthenticatedScreen from './src/components/AuthenticatedScreen';
 
 import HomeScreen from './src/components/HomeScreen';
 import PlayScreen from './src/components/PlayScreen';
